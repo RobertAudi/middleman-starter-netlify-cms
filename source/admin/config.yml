@@ -14,22 +14,33 @@ collections:
         label: Homepage
         name: home
         fields:
-          - label: Hero
-            name: hero
-            widget: object
-            fields:
-              - {label: Title, name: title, widget: string}
-              - {label: Image, name: image, widget: image}
-          - label: Story
-            name: story
-            widget: markdown
-
           - label: Header
             name: header
             widget: object
             fields:
               - {label: "Catchphrase", name: catchphrase, widget: string}
-              - {label: "Contact", name: contact, widget: string}
+
+          - label: Activity
+            name: activity
+            widget: object
+            fields:
+              - {label: "Catchphrase", name: catchphrase, widget: string}
+              - {label: "Institutions", name: institutions, widget: string}
+
+          - label: Description
+            name: description
+            widget: object
+            fields:
+              - {label: "Catchphrase", name: catchphrase, widget: string}
+              - {label: "Description", name: description_text, widget: string}
+
+          - label: Buttons
+            name: buttons
+            widget: object
+            fields:
+              - {label: "Make an appointment", name: make_an_appointment, widget: string}
+              - {label: "Become happy", name: become_happy, widget: string}
+              - {label: "Join the team", name: join_the_team, widget: string}
 
   - name: settings
     label: Settings
@@ -80,3 +91,16 @@ collections:
           - label: Phone number
             name: phone_number
             widget: string
+
+#      - file: data/settings/contact.yml
+#        label: Contacts
+#        name: contact_info
+#        fields:
+#          - label: Contact
+#            name: contacts
+#            widget: list
+#            fields:
+#              - {label: "Address Line 1", name: address_line1, widget: string}
+#              - {label: "Address Line 2", name: address_line2, widget: string}
+#              - {label: "Email", name: email, widget: string}
+#              - {label: "Phone number", name: phone_number, widget: string}
