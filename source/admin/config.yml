@@ -4,7 +4,7 @@ backend:
 media_folder: source/images/uploads
 public_folder: /images/uploads
 
-#publish_mode: editorial_workflow #optional, enables publishing workflow
+# publish_mode: editorial_workflow #optional, enables publishing workflow
 
 collections:
   - name: pages
@@ -23,6 +23,13 @@ collections:
           - label: Story
             name: story
             widget: markdown
+
+          - label: Header
+            name: header
+            widget: object
+            fields:
+              - {label: "Catchphrase", name: catchphrase, widget: string}
+              - {label: "Contact", name: contact, widget: string}
 
   - name: settings
     label: Settings
@@ -56,3 +63,20 @@ collections:
             widget: select
             options: ["website", "article", "blog", "company"]
             default: "website"
+
+      - file: data/settings/contact.yml
+        label: Contact
+        name: contact
+        fields:
+          - label: Address Line 1
+            name: address_line1
+            widget: string
+          - label: Address Line 2
+            name: address_line2
+            widget: string
+          - label: Email
+            name: email
+            widget: string
+          - label: Phone number
+            name: phone_number
+            widget: string
