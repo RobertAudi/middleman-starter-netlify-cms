@@ -3,9 +3,9 @@ require "uglifier"
 
 # Activate and configure extensions
 # https://middlemanapp.com/advanced/configuration/#configuring-extensions
-Slim::Engine.set_options shortcut: {
-  '#' => { tag: 'div', attr: 'id' }, '.' => { tag: 'div', attr: 'class' }
-}
+# Slim::Engine.set_options shortcut: {
+#   '#' => { tag: 'div', attr: 'id' }, '.' => { tag: 'div', attr: 'class' }
+# }
 
 activate :autoprefixer do |prefix|
   prefix.browsers = "last 2 versions"

@@ -1,0 +1,23 @@
+<section class="description">
+  <div class="container">
+    <div class="description__tailored">
+      <div>
+        <%= partial 'partials/index/description_icon' %>
+      </div>
+
+      <div class="mt-lg-5">
+        <h2 class="text-secondary">
+          <%= data.pages.home.description.catchphrase %>
+        </h2>
+
+        <p>
+          <%= data.pages.home.description.description_text %>
+        </p>
+      </div>
+    </div>
+
+    <div class="description__appointment">
+      <%= link_to data.pages.home.buttons.make_an_appointment, "#", class: "btn btn-primary", rel: 'noopener noreferrer nofollow' %>
+    </div>
+  </div>
+</section>

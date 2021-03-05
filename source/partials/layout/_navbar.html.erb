@@ -1,0 +1,37 @@
+<nav class="px-0 navbar--home">
+  <div class="container-md">
+    <%= link_to("/") { partial 'partials/layout/icons/capsens_logo_primary' } %>
+
+    <ul class="navbar__list">
+      <% data.settings.navigation.nav_items.each do |nav_item| %>
+        <li>
+          <%= nav_link nav_item.label, nav_item.path, class: "nav-link p-2 px-lg-3" %>
+        </li>
+      <% end %>
+    </ul>
+
+    <button class="d-block d-md-none px-3 py-2 rounded-pill navbar__toggler navbar__toggler--white" id="buttonMobile">
+      <%= image_tag('navbar_toggle.svg', height: '30') %>
+    </button>
+  </div>
+</nav>
+
+<div class="navbar__mobile-menu d-md-none">
+  <div class="card p-3 m-3">
+    <div class="card-title mb-0">
+      <button id="closeMobileNav" class="float-right">
+        <%= image_tag('close.svg', height: '20') %>
+      </button>
+    </div>
+
+    <div class="card-body p-0">
+      <ul class="navbar__list">
+        <% data.settings.navigation.nav_items.each do |nav_item| %>
+          <li class="nav-item text-primary h4 mb-0 font-weight-bold">
+            <%= nav_link nav_item.label, nav_item.path, class: "nav-link" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

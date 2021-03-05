@@ -1,0 +1,42 @@
+<footer class="footer">
+  <div class="container">
+    <%= partial 'partials/layout/icons/capsens_logo_secondary' %>
+
+    <div class="row">
+      <div class="footer__contact">
+        <p>
+          <%= data.settings.contact.address_line1 %>
+        </p>
+
+        <p>
+          <%= data.settings.contact.address_line2 %>
+        </p>
+
+        <%= link_to(data.settings.contact.email, "mailto:#{data.settings.contact.phone_number}", class: "footer__email") %>
+        <%= link_to(data.settings.contact.phone_number, "tel:#{format_phone_number(data.settings.contact.phone_number)}") %>
+      </div>
+    </div>
+
+    <div class="bottom">
+      <div class="footer__social_networks">
+        <p>
+          <%= data.pages.home.footer.social_networks %>
+        </p>
+
+        <div class="footer__social_networks__links">
+          <%= link_to("https://github.com/CapSens", rel: 'noopener noreferrer nofollow') {
+            image_tag('social/github.svg', class: 'github_logo', alt: 'github_logo')
+          } %>
+
+          <%= link_to("https://fr.linkedin.com/company/capsens-eu", rel: 'noopener noreferrer nofollow') {
+            image_tag('social/linkedin.svg', class: 'linked_logo', alt: 'linkedin_logo')
+          } %>
+
+          <%= link_to("https://twitter.com/CapSens", rel: 'noopener noreferrer nofollow') {
+            image_tag('social/twitter.svg', class: 'twitter_logo', alt: 'twitter_logo')
+          } %>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

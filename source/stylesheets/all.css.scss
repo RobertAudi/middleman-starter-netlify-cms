@@ -1,28 +1,42 @@
 //setup
 @charset 'utf-8';
 
-//bootstrap stuff
-@import 'demo/base/variables';
-@import 'demo/base/mixins';
-@import 'demo/base/normalize';
-@import 'demo/base/scaffolding';
-@import 'demo/base/type';
+// Variables
+@import 'variables/fonts';
+@import 'variables/colors';
+@import 'variables/box_shadows';
+@import 'variables/border_radius';
+@import 'variables/font_weights';
+@import 'variables/gradient';
+@import 'variables/transform';
 
-@import 'demo/base/colors';
-@import 'demo/base/typography';
-@import 'demo/base/grid';
-@import 'demo/base/placeholders';
+// Libraries
+@import "bootstrap/bootstrap";
 
-@import 'demo/shared/header-primary';
-@import 'demo/shared/main-content';
-@import 'demo/shared/footer';
+// Mixins
+@import 'mixins/logo_container';
+@import 'mixins/highlight_text';
 
-@import 'demo/products/products';
-@import 'demo/products/product';
-@import 'demo/products/product-detail';
+// Components
+@import 'components/texts';
+@import 'components/links';
+@import 'components/lists';
+@import 'components/titles';
+@import 'components/navbars';
+@import 'components/buttons';
+@import 'components/capsens_logos';
+@import 'components/cards';
+@import 'components/footers';
 
-@import 'demo/news/news';
-@import 'demo/news/news-detail';
+// Animate icons
+@import 'animate_icons/crowdfunding';
+@import 'animate_icons/interfacing_icon';
+@import 'animate_icons/modern_icons';
 
-@import 'demo/homepage/hero';
-@import 'demo/homepage/story';
+// Views
+@import 'views/pages/home/home_header';
+@import 'views/pages/home/activity';
+@import 'views/pages/home/description';
+
+// Global
+@import 'rules';

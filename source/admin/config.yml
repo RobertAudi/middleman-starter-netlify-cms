@@ -34,6 +34,12 @@ collections:
               - {label: "Catchphrase", name: catchphrase, widget: string}
               - {label: "Description", name: description_text, widget: string}
 
+          - label: Footer
+            name: footer
+            widget: object
+            fields:
+              - {label: "Social networks", name: social_networks, widget: string}
+
           - label: Buttons
             name: buttons
             widget: object
@@ -91,16 +97,3 @@ collections:
           - label: Phone number
             name: phone_number
             widget: string
-
-#      - file: data/settings/contact.yml
-#        label: Contacts
-#        name: contact_info
-#        fields:
-#          - label: Contact
-#            name: contacts
-#            widget: list
-#            fields:
-#              - {label: "Address Line 1", name: address_line1, widget: string}
-#              - {label: "Address Line 2", name: address_line2, widget: string}
-#              - {label: "Email", name: email, widget: string}
-#              - {label: "Phone number", name: phone_number, widget: string}

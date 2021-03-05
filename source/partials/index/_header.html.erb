@@ -1,0 +1,12 @@
+<header class="home_header">
+  <div class="container">
+    <div class="home_header__text text-white">
+      <h1 class="home_header__catchphrase">
+        <%= partial 'partials/layout/icons/capsens_logo_tertiary' %>
+        <%= data.pages.home.header.catchphrase %>
+      </h1>
+    </div>
+
+    <%= link_to data.pages.home.buttons.make_an_appointment, "#", class: "btn btn-primary mt-5", rel: 'noopener noreferrer nofollow' %>
+  </div>
+</header>

@@ -1,0 +1,32 @@
+h1, h2, h3, h4 {
+  margin: 0;
+}
+
+h1 {
+  font-family: $secondary-font;
+  font-size: 2.8125rem;
+  font-weight: $regular;
+  line-height: 1.2;
+
+  .bold {
+    font-weight: $semi-bold;
+  }
+}
+
+h2 {
+  font-family: $secondary-font;
+  font-size: 1.875rem;
+  font-weight: $extra-bold;
+}
+
+h3 {
+  font-family: $secondary-font;
+  font-size: 1.5rem;
+  font-weight: $extra-bold;
+}
+
+h4 {
+  font-family: $secondary-font;
+  font-size: 1.25rem;
+  font-weight: $extra-bold;
+}

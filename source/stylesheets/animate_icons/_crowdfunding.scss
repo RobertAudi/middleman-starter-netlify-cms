@@ -1,0 +1,233 @@
+#crowdfundingPlatformsIcon {
+  $time: 5s;
+  $delay: 1s;
+
+  .st0 {
+    fill: $secondary;
+  }
+
+  .st1 {
+    fill: $tertiary;
+    mix-blend-mode: multiply;
+  }
+
+  #circleNorth {
+    animation: moveCircleNorth $time infinite $delay;
+    transform-origin: center;
+  }
+  #circleSouth {
+    animation: moveCircleSouth $time infinite $delay;
+  }
+  #circleSouthEst {
+    animation: moveCircleSouthEst $time infinite $delay;
+  }
+  #circleNorthWest {
+    animation: moveCircleNorthWest $time infinite $delay;
+  }
+  #circleNorthEst {
+    animation: moveCircleNorthEst $time infinite $delay;
+  }
+  #circleSouthWest {
+    animation: moveCircleSouthWest $time infinite $delay;
+  }
+
+  #cubeEst {
+    animation: moveCubeEst $time infinite $delay;
+  }
+  #cubeWest {
+    animation: moveCubeWest $time infinite $delay;
+  }
+  #cubeNorthEst {
+    animation: moveCubeNorthEst $time infinite $delay;
+  }
+  #cubeNorthWest {
+    animation: moveCubeNorthWest $time infinite $delay;
+  }
+  #cubeSouthWest {
+    animation: moveCubeSouthWest $time infinite $delay;
+  }
+  #cubeSouthEst {
+    animation: moveCubeSouthEst $time infinite $delay;
+  }
+}
+
+// Cube animations
+
+@keyframes moveCubeEst {
+  0%, 9% {
+    transform: translate(0, 0);
+  }
+  21%, 60% {
+    transform: translate(7px, 0);
+  }
+  60%, 100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes moveCubeWest {
+  0%, 9% {
+    transform: translate(0, 0);
+  }
+  21%, 60% {
+    transform: translate(-7px, 0);
+  }
+  60%, 100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes moveCubeNorthEst {
+  0%, 9% {
+    transform: translate(0, 0);
+  }
+  21%, 60% {
+    transform: translate(5px, -7px);
+  }
+  60%, 100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes moveCubeNorthWest {
+  0%, 9% {
+    transform: translate(0, 0);
+  }
+  21%, 60% {
+    transform: translate(-5px, -7px);
+  }
+  60%, 100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes moveCubeSouthWest {
+  0%, 9% {
+    transform: translate(0, 0);
+  }
+  21%, 60% {
+    transform: translate(-5px, 7px);
+  }
+  60%, 100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes moveCubeSouthEst {
+  0%, 9% {
+    transform: translate(0, 0);
+  }
+  21%, 60% {
+    transform: translate(5px, 7px);
+  }
+  60%, 100% {
+    transform: translate(0, 0);
+  }
+}
+
+// Circle animations
+
+@keyframes moveCircleNorth {
+  0% {
+    transform: translate(0, 0);
+  }
+  9%, 15% {
+    transform: translate(0, -3px);
+  }
+  15%, 30% {
+    transform: translate(0, 29px) scale(1.5);
+  }
+  45%, 100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes moveCircleSouth {
+  0% {
+    transform: translate(0, 0);
+  }
+  9%, 15% {
+    opacity: 1;
+    transform: translate(0, 3px);
+  }
+  15%, 30% {
+    opacity: 0;
+    transform: translate(0, -18.5px);
+  }
+  45%, 100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes moveCircleSouthEst {
+  0% {
+    transform: translate(0, 0);
+  }
+  9%, 15% {
+    opacity: 1;
+    transform: translate(3px, 3px);
+  }
+  15%, 30% {
+    opacity: 0;
+    transform: translate(-16px, -9px);
+  }
+  45%, 100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes moveCircleNorthWest {
+  0% {
+    transform: translate(0, 0);
+  }
+  9%, 15% {
+    opacity: 1;
+    transform: translate(-3px, -3px);
+  }
+  15%, 30% {
+    opacity: 0;
+    transform: translate(16px, 9px);
+  }
+  45%, 100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes moveCircleNorthEst {
+  0% {
+    transform: translate(0, 0);
+  }
+  9%, 15% {
+    opacity: 1;
+    transform: translate(3px, -3px);
+  }
+  15%, 30% {
+    opacity: 0;
+    transform: translate(-16px, 9px);
+  }
+  45%, 100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes moveCircleSouthWest {
+  0% {
+    transform: translate(0, 0);
+  }
+  9%, 15% {
+    opacity: 1;
+    transform: translate(-3px, 3px);
+  }
+  15%, 30% {
+    opacity: 0;
+    transform: translate(16px, -9px);
+  }
+  45%, 100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}

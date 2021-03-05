@@ -1,0 +1,166 @@
+.description {
+  height: 40rem;
+  position: relative;
+
+  &::before {
+    content: "";
+    z-index: -1;
+    background-image: url("../images/stripe_1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 30rem;
+    width: 90%;
+    position: absolute;
+    right: 0;
+    top: -3rem;
+  }
+
+  &::after {
+    content: "";
+    z-index: -1;
+    background-image: url("../images/stripe_2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 30rem;
+    width: 100%;
+    position: absolute;
+    right: 0;
+    bottom: -5rem;
+
+    @include media-breakpoint-up(sm) {
+      width: 85%;
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: 75%;
+    }
+  }
+
+  .container {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__tailored {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 25rem;
+    padding: 0;
+
+    @include media-breakpoint-up(lg) {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 3rem 0 0 7rem;
+    }
+
+    #tailoredIcon {
+      width: 4rem;
+
+      .st0 {
+        fill: $tertiary;
+      }
+      .st1 {
+        fill: $primary;
+        animation: moveMiddleLayer 5s infinite 4s;
+      }
+      .st2 {
+        fill: $secondary;
+        animation: moveTopLayer 5s infinite 4s;
+      }
+      .st3 {
+        fill: none;
+        stroke: $tertiary;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 7.7357, 5.8018;
+        animation: moveTopLayer 5s infinite 4s;
+      }
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    div:first-child {
+      height: 17%;
+
+      @include media-breakpoint-up(lg) {
+        height: 45%;
+      }
+    }
+
+    div:nth-child(2) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 19rem;
+
+      @include media-breakpoint-up(md) {
+        width: 30rem;
+        align-items: flex-start;
+        padding-left: 1rem;
+      }
+    }
+  }
+
+  &__appointment {
+    height: 15rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@keyframes moveTopLayer {
+  0% {
+    transform: translateY(0);
+  }
+  15%, 18% {
+    transform: translateY(17px);
+  }
+  18%, 24% {
+    transform: translateY(-9px);
+  }
+  24%, 100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes moveMiddleLayer {
+  0% {
+    transform: translateY(0);
+  }
+  15%, 18% {
+    transform: translateY(10px);
+  }
+  18%, 24% {
+    transform: translateY(-5px);
+  }
+  24%, 100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes moveBrick {
+  0%, 10% {
+    transform: translate(0, 0);
+  }
+  13%, 90% {
+    transform: translate(-15.9px, -11.5px);
+  }
+  99%, 100% {
+    transform: translate(0, 0);
+  }
+
+}

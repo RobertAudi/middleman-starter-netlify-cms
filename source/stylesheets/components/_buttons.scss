@@ -1,0 +1,98 @@
+.btn {
+  $btn-width: 18rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-transform: uppercase;
+  border-radius: $btn-border-radius;
+  border: none;
+  height: 3rem;
+  width: $btn-width;
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled):focus {
+    background-color: $primary;
+  }
+
+  &-primary {
+    color: $white;
+    background-color: $primary;
+    box-shadow: $btn-box-shadow;
+    transition: all .3s ease;
+    font-weight: $semi-bold;
+
+    &:hover {
+      background-color: $primary;
+      transform: translateY(-2px);
+      box-shadow: $btn-box-shadow-hover;
+    }
+  }
+
+  &-secondary {
+    color: $black;
+    position: relative;
+    background-color: $white;
+    width: $btn-width - .9;
+    height: 90%;
+    font-weight: $semi-bold;
+
+    %btn-secondary-before {
+      top: -6px;
+      left: -7px;
+      width: $btn-width;
+      box-shadow: $btn-box-shadow;
+    }
+
+    &:hover::before {
+      @extend .btn;
+      @extend %btn-secondary-before;
+
+      content: "";
+      z-index: -1;
+      position: absolute;
+      background-image: linear-gradient(90deg, $tertiary, $secondary, $primary, $tertiary, $secondary, $primary);
+      background-size: 200% 200%;
+      animation: reflect .3s linear;
+    }
+
+    &::before {
+      @extend .btn;
+      @extend %btn-secondary-before;
+
+      content: "";
+      z-index: -1;
+      position: absolute;
+      background-image: $primary-gradient;
+    }
+
+    &:hover, &:focus, &:active {
+      background-color: $white !important;
+      color: $black !important;
+    }
+
+    &:hover {
+      box-shadow: $btn-box-shadow-hover;
+    }
+  }
+}
+
+@keyframes reflect {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 0%;
+  }
+}
+
+button {
+  border: unset;
+  background-color: unset;
+
+  &:focus {
+    outline: unset;
+    border: 0;
+  }
+}

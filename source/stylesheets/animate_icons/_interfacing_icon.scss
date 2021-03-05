@@ -1,0 +1,284 @@
+#interfacingIcon {
+  position: relative;
+  top: -1rem;
+  width: 5rem;
+  $animation-timing: 5s;
+  $timing-function: ease;
+  $iteration-count: infinite;
+
+  // primary color block
+  .primaryBlockFirst {
+    opacity: 0;
+    animation: primaryBlockFirst $animation-timing $timing-function $iteration-count;
+    fill: $primary;
+  }
+  .primaryBlockMiddle {
+    fill: $primary;
+    opacity: 0;
+    animation: primaryBlockMiddle $animation-timing $timing-function $iteration-count;
+  }
+  .primaryBlockLast {
+    fill: $primary;
+    animation: primaryBlockLast $animation-timing $timing-function $iteration-count;
+  }
+
+  // secondary color block
+  .secondaryBlockFirst .st3, 
+  .secondaryBlockMiddle .st2,
+  .secondaryBlockLast .st1 {
+    fill: none;
+    stroke: $white;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+  }
+  .secondaryBlockFirst {
+    animation: secondaryBlockFirst $animation-timing $timing-function $iteration-count;
+    .st2 {
+      fill: $secondary;
+    }
+  }
+  .secondaryBlockMiddle {
+    opacity: 0;
+    animation: secondaryBlockMiddle $animation-timing $timing-function $iteration-count;
+    .st1 {
+      fill: $secondary;
+    }
+  }
+  .secondaryBlockLast {
+    animation: secondaryBlockLast $animation-timing $timing-function $iteration-count;
+    opacity: 0;
+    .st0 {
+      fill: $secondary;
+    }
+  }
+
+  // tertiary color block
+  .tertiaryBlockFirst {
+    opacity: 0;
+    animation: tertiaryBlockFirst $animation-timing $timing-function $iteration-count;
+    fill: $tertiary;
+  }
+  .tertiaryBlockMiddle {
+    fill: $tertiary;
+    animation: tertiaryBlockMiddle $animation-timing $timing-function $iteration-count;
+  }
+  .tertiaryBlockLast {
+    fill: $tertiary;
+    animation: tertiaryBlockLast $animation-timing $timing-function $iteration-count;
+    opacity: 0;
+  }
+}
+
+// primary color block
+@keyframes primaryBlockFirst {
+  0% {
+    transform: unset;
+  }
+  15% {
+    transform: translate(0);
+    opacity: 0;
+  }
+  25% {
+    transform: translate(-20px, 0);
+    opacity: 0;
+  }
+  35% {
+    opacity: 1;      
+    transform: translate(-20px, 0);
+  }
+  45% {
+    opacity: 1;
+    transform: translate(0);  
+  } 
+  55% {
+    transform: translate(5px, -5px);
+    opacity: 1;
+  }
+  65% { 
+    opacity: 0;
+  }
+}
+
+@keyframes primaryBlockMiddle {
+  0%, 45% {
+    opacity: 0;
+  }
+  55% {
+    opacity: 1;
+    transform: translate(0);
+  }
+  65% {
+    opacity: 1;
+    transform: translate(5px, -5px);
+  }
+  75% {
+    opacity: 0;
+  }
+  85% {
+    transform: translate(0);
+  }
+}
+
+@keyframes primaryBlockLast {
+  0% {
+    transform: translate(0);
+  }
+  15% {
+    opacity: 1;
+    transform: translate(0);
+  }
+  25% {
+    transform: translate(-30px, -5px);
+    opacity: 1;
+  }
+  35% {
+    transform: translate(-30px, 10px);
+    opacity: 1;
+  }
+  45% {
+    opacity: 0;
+    transform: translate(0);
+  }
+  55% {
+    opacity: 0;
+  }
+  65% {
+    opacity: 1;
+  }
+}
+
+// secondary color block
+@keyframes secondaryBlockFirst {
+  0% {
+    transform: unset;
+  }
+  15% {
+    transform: translate(0);
+  }
+  25% {
+    transform: translate(5px, -5px);
+    opacity: 1;
+  }
+  35% {
+    transform: translate(0);
+    opacity: 0;
+  }
+  55% {
+    transform: translate(-20px, 0);
+    opacity: 0;
+  }
+  65% {
+    opacity: 1;      
+    transform: translate(-20px, 0);
+  }
+  75% {
+    opacity: 1;
+    transform: translate(0);  
+  }
+}
+@keyframes secondaryBlockMiddle {
+  15% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+    transform: translate(0);
+  }
+  35% {
+    transform: translate(5px, -5px);
+    opacity: 1;
+  }
+  45% {
+    transform: translate(0);
+    opacity: 0;
+  }
+} 
+@keyframes secondaryBlockLast {
+  0%, 35% {
+    opacity: 0;
+  }
+  45% {
+    opacity: 1;
+    transform: translate(0);
+  }
+  55% {
+    transform: translate(-30px, -5px);
+    opacity: 1;
+  }
+  65% {
+    transform: translate(-30px, 10px);
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+    transform: translate(0);
+  }
+}
+
+// tertiary color block
+@keyframes tertiaryBlockFirst {
+  0%, 5%, 15%, 25% {
+    transform: translate(0);
+    opacity: 0;
+  }
+  45% {
+    transform: translate(-20px, 0);
+    opacity: 0;
+  }
+  55% {
+    opacity: 1;      
+    transform: translate(-20px, 0);
+  }
+  65% {
+    opacity: 1;
+    transform: translate(0);  
+  }
+  75% {
+    transform: translate(5px, -5px);
+    opacity: 0;    
+  }
+}
+
+@keyframes tertiaryBlockMiddle {
+  0% {
+    opacity: 1;
+  }
+  15% {
+    opacity: 1;
+    transform: translate(0);
+  }
+  25% {
+    transform: translate(5px, -5px);
+    opacity: 1;
+  }
+  35% {
+    opacity: 0;
+    transform: translate(0);
+  }
+  55%, 65% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+}
+
+@keyframes tertiaryBlockLast {
+  0%, 15%, 65% {
+    opacity: 0;
+    transform: translate(0);
+  }
+  25% {
+    opacity: 1;
+    transform: translate(0);
+  }
+  35% {
+    transform: translate(-30px, -5px);
+    opacity: 1;
+  }
+  55% {
+    transform: translate(-30px, 10px);
+    opacity: 1;
+  }
+}

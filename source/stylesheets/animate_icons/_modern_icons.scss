@@ -1,0 +1,52 @@
+#modernIcon, #modernIconReact {
+  .st0 {
+    fill: $primary;
+  }
+  .st1 {
+    fill: $secondary;
+  }
+  .st2 {
+    fill: $primary;
+    stroke: $primary;
+    stroke-miterlimit: 10;
+  }
+  .st3 {
+    fill: $tertiary;
+  }
+  .st4 {
+    opacity: 0.2;
+  }
+
+  .body {
+    animation: bodyRotation 5s ease infinite 8s;
+    transform-origin: center center;
+  }
+  .head {
+    animation: headerRotation 5s ease infinite 8s;
+    transform-origin: bottom center;
+  }
+}
+
+@keyframes bodyRotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  15%, 45% {
+    transform: rotate(45deg);
+  }
+  60%, 100% {
+    transform: rotate(0deg);
+  } 
+}
+
+@keyframes headerRotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  15%, 45% {
+    transform: rotate(-5deg);
+  }
+  60%, 100% {
+    transform: rotate(0deg);
+  }
+}

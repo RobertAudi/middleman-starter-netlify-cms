@@ -1,0 +1,45 @@
+#capsensLogo {
+  width: 15rem;
+  transform: translateY(2px);
+
+  .st0 {
+    fill: $white;
+  }
+
+  &Primary {
+    @extend #capsensLogo;
+    width: 9.4rem;
+
+    @include media-breakpoint-up(sm) {
+      margin-top: 0;
+    }
+
+    .st0 {
+      fill: $primary;
+    }
+
+    .st1 {
+      fill: $tertiary;
+    }
+  }
+
+  &Secondary {
+    @extend #capsensLogo;
+
+    .st1 {
+      fill: $secondary;
+    }
+  }
+
+  &Tertiary {
+    @extend #capsensLogo;
+
+    .st1 {
+      fill: $tertiary;
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    height: 3rem;
+  }
+}

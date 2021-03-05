@@ -1,0 +1,31 @@
+@mixin highlight_text($color) {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: -2%;
+  height: 100%;
+  width: 104%;
+  background-color: $color;
+}
+
+@mixin vertical_right_bar($color) {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 104%;
+  width: 5px;
+  height: 100%;
+  background-color: $color;
+  animation: blink 1.2s infinite;
+}
+
+@keyframes blink {
+  0%, 50% {
+    visibility: visible;
+  }
+  50%, 100% {
+    visibility: hidden;
+  }
+}

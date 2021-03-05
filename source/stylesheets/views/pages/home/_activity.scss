@@ -1,0 +1,93 @@
+.activity {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  margin-top: 35rem;
+  display: flex;
+  justify-content: center;
+  min-height: 10rem;
+
+  @include media-breakpoint-up(xl) {
+    margin-top: 30%;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    @include media-breakpoint-up(sm) {
+      align-items: flex-start;
+      flex-direction: row;
+    }
+  }
+
+  &__text {
+    width: 19rem;
+
+    @include media-breakpoint-up(sm) {
+      width: 22rem;
+      padding-top: 1rem;
+    }
+
+    h2 {
+      font-weight: $semi-bold;
+      font-size: 2.3rem;
+      line-height: 1.4;
+
+      span {
+        position: relative;
+        font-weight: $bold;
+        left: 2%;
+
+        &::before {
+          @include highlight_text($tertiary);
+        }
+
+        &::after {
+          @include vertical_right_bar($tertiary);
+        }
+      }
+    }
+  }
+
+  #digitalFinanceIcon {
+    width: 6rem;
+
+    .st0 {
+      fill: $primary;
+      transform: translateX(15px);
+      animation: moveFirstArrow 5s ease infinite 1s;
+    }
+
+    .st1 {
+      fill: $secondary;
+      mix-blend-mode: screen;
+      animation: moveSecondArrow 5s ease infinite 1s;
+    }
+  }
+}
+
+@keyframes moveFirstArrow {
+  0% {
+    transform: translateX(15px);
+  }
+  12%, 18% {
+    transform: translateX(0);
+  }
+  18%, 100% {
+    transform: translateX(15px);
+  }
+}
+
+@keyframes moveSecondArrow {
+  0% {
+    fill: $secondary;
+  }
+  12%, 18% {
+    fill: $tertiary;
+  }
+  18%, 100% {
+    fill: $secondary;
+  }
+}

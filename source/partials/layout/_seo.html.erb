@@ -1,0 +1,11 @@
+<title>
+  <%= content_for?(:seo_title) ? yield_content(:seo_title) : data.settings.seo.title %>
+</title>
+
+<meta property="description" content="<%= content_for?(:seo_description) ? yield_content(:seo_description) : data.settings.seo.description %>">
+<meta property="og:title" content="<%= content_for?(:seo_og_title) ? yield_content(:seo_og_title) : data.settings.seo.title %>">
+<meta property="og:description" content="<%= content_for?(:seo_og_description) ? yield_content(:seo_og_description) : data.settings.seo.description %>">
+
+<meta property="og:url" content="<%= current_page.path %>">
+<meta property="og:type" content="<%= data.settings.seo.og_type %>">
+<meta property="og:image" content="<%= image_path(data.settings.seo.og_image) %>">
