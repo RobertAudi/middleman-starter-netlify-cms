@@ -95,6 +95,9 @@ collections:
           - label: "Description"
             name: description
             widget: string
+          - label: "og:image"
+            name: "og_image"
+            widget: image
           - label: "og:type"
             name: og_type
             widget: select

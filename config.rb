@@ -3,9 +3,6 @@ require "uglifier"
 
 # Activate and configure extensions
 # https://middlemanapp.com/advanced/configuration/#configuring-extensions
-
-# Use '#id' and '.classname' as div shortcuts in slim
-# http://slim-lang.com/
 Slim::Engine.set_options shortcut: {
   '#' => { tag: 'div', attr: 'id' }, '.' => { tag: 'div', attr: 'class' }
 }
@@ -14,9 +11,14 @@ activate :autoprefixer do |prefix|
   prefix.browsers = "last 2 versions"
 end
 
-activate :livereload
 # Layouts
 # https://middlemanapp.com/basics/layouts/
+
+# pretty urls
+activate :directory_indexes
+
+# Localization
+activate :i18n, mount_at_root: :fr
 
 # Per-page layout changes
 page '/*.xml', layout: false
@@ -37,41 +39,22 @@ end
 # Proxy pages
 # https://middlemanapp.com/advanced/dynamic-pages/
 
-# proxy product.yml files to product.html 
+# proxy product.yml files to product.html
 data.products.each do |_filename, product|
   # product is an array: [filename, {data}]
-  proxy "/product/#{product[:title].parameterize}/index.html", "product.html", 
-  locals: {product: product}, 
+  proxy "/product/#{product[:title].parameterize}/index.html", "product.html",
+  locals: {product: product},
   layout: 'product-detail',
   ignore: true
 end
 
-# Helpers
-# Methods defined in the helpers block are available in templates
-# https://middlemanapp.com/basics/helper-methods/
-
-# pretty urls
-activate :directory_indexes
-
-helpers do
-  #helper to set background images with asset hashes in a style attribute
-  def background_image(image)
-    "background-image: url('" << image_path(image) << "')"
-  end
-  
-  def nav_link(link_text, url, options = {})
-    options[:class] ||= ""
-    options[:class] << " active" if url == current_page.url
-    link_to(link_text, url, options)
-  end
-
-  def markdown(content)
-     Tilt['markdown'].new { content }.render
-  end
-end
-
 # Build-specific configuration
 # https://middlemanapp.com/advanced/configuration/#environment-specific-settings
+configure :development do
+  set :debug_assets, true
+
+  activate :livereload
+end
 
 configure :build do
   # Minify css on build
@@ -83,7 +66,6 @@ configure :build do
   # Use Gzip
   activate :gzip
 
-  #Use asset hashes to use for caching
-  #activate :asset_hash
-
+  # # Use asset hashes to use for caching
+  # activate :asset_hash
 end
