@@ -84,3 +84,19 @@ collections:
             widget: select
             options: ['kg', ' st', ' lb']
             default: 'kg'
+
+      - file: data/settings/seo.yml
+        label: SEO
+        name: seo
+        fields:
+          - label: "Title"
+            name: title
+            widget: string
+          - label: "Description"
+            name: description
+            widget: string
+          - label: "og:type"
+            name: og_type
+            widget: select
+            options: ["website", "article", "blog", "company"]
+            default: "website"
