@@ -31,8 +31,6 @@ page "/admin/*", layout: false
 # https://middlemanapp.com/advanced/configuration/#environment-specific-settings
 configure :development do
   set :debug_assets, true
-
-  activate :livereload
 end
 
 configure :build do
