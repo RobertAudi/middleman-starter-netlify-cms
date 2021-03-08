@@ -52,6 +52,8 @@ collections:
 
   - name: settings
     label: Settings
+    editor:
+      preview: false
     files:
       - file: data/settings/navigation.yml
         label: Navigation
