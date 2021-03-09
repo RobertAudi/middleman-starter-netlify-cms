@@ -1,0 +1,268 @@
+.ruby_description {
+  height: 34rem;
+  padding-top: 2rem;
+
+  background-image: url("../images/clients_banner.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  .container {
+    height: 100%;
+    display: flex;
+  }
+
+  h1 {
+    color: $primary;
+
+    span {
+      &:first-child {
+        color: $secondary;
+        font-weight: $semi-bold;
+      }
+
+      &:last-child {
+        color: $tertiary;
+        font-weight: $semi-bold;
+      }
+    }
+  }
+
+  &__text {
+    margin-top: 7rem;
+
+    @include media-breakpoint-up(sm) {
+      margin: 10rem 2rem 0 0;
+    }
+  }
+
+  &__description {
+    display: flex;
+    margin-top: 3rem;
+    width: 100%;
+
+    @include media-breakpoint-up(sm) {
+      width: 25rem;
+    }
+
+    h2 {
+      color: $secondary;
+    }
+
+    #rubyIcon {
+      width: 4rem;
+      position: relative;
+      top: -0.6rem;
+
+      .st0 {
+        fill: $secondary;
+      }
+      .st1 {
+        fill: $primary;
+      }
+      .st2 {
+        fill: $secondary;
+        stroke: $primary;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-miterlimit: 10;
+      }
+      .st3 {
+        fill: none;
+        stroke: $tertiary;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-miterlimit: 10;
+        &.large {
+          animation: largeLine 5s ease infinite;
+          opacity: 0;
+        }
+        &.small {
+          animation: smallLine 5s ease infinite;
+          opacity: 0;
+        }
+      }
+      .st4 {
+        fill: $tertiary;
+      }
+    }
+
+    @keyframes largeLine {
+      0% {
+        opacity: 0;
+      }
+      25%, 35% {
+        opacity: 1;
+        stroke-width: 1px;
+      }
+      35%, 100% {
+        opacity: 1;
+        stroke-width: 2px;
+      }
+    }
+
+    @keyframes smallLine {
+      0% {
+        opacity: 0;
+      }
+      65%, 75% {
+        opacity: 1;
+        stroke-width: 1px;
+      }
+      75%, 100% {
+        opacity: 1;
+        stroke-width: 2px;
+      }
+    }
+  }
+
+  &__screen {
+    display: none;
+
+    @include media-breakpoint-up(sm) {
+      height: 140%;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      letter-spacing: 0;
+      position: relative;
+      top: -2rem;
+    }
+  }
+
+  .screen {
+    &__top {
+      $height: 17rem;
+      $width: 30rem;
+
+      height: $height;
+      width: $width;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background-color: $black;
+      border-radius: $card-border-radius $card-border-radius 0 0;
+
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: $white;
+        opacity: 0.05;
+        height: 0;
+        width: 0;
+        border-radius: $card-border-radius $card-border-radius 0 0;
+        border-bottom: $height solid;
+        border-right: $width solid transparent;
+      }
+    }
+
+    &__text_editor {
+      font-size: 87.5%;
+      line-height: 22px;
+      font-family: $text-editor-font;
+
+      background-color: $editor-bg;
+      height: 85%;
+      width: 93%;
+
+      display: flex;
+
+      pre {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      &__line_numbers {
+        width: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        color: $editor-color;
+        margin-right: 0.5rem;
+        padding-top: 0.5em;
+      }
+    }
+
+    &__bottom {
+      background-color: $white;
+      border-radius: 0 0 $card-border-radius $card-border-radius;
+      box-shadow: inset 0px -18px 47px -18px $light-grey;
+
+      height: 4rem;
+      width: 30rem;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      z-index: 1;
+
+      .on_off_button {
+        background-color: $light-grey;
+        height: 1.25rem;
+        width: 1.25rem;
+        border-radius: 50%;
+      }
+    }
+
+    &__support {
+      background-color: $white;
+      box-shadow: inset 0px -12px 36px -21px $light-grey, inset 0px 28px 36px -21px $light-grey;
+      height: 3rem;
+      width: 12rem;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -1rem;
+        left: -1rem;
+        border-bottom-right-radius: 32px;
+        transform: rotate(10deg);
+        background-color: $white;
+        height: 4rem;
+        width: 3rem;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: -1rem;
+        right: -1rem;
+        border-bottom-left-radius: 32px;
+        transform: rotate(-10deg);
+        background-color: $white;
+        height: 4rem;
+        width: 3rem;
+      }
+    }
+
+    &__foot {
+      box-shadow: inset 0px 0px 10px 0px $light-grey;
+      background-color: $white;
+      border-radius: 2px;
+      height: 0.5rem;
+      width: 13rem;
+
+      position: relative;
+      z-index: 1;
+      top: -4px;
+    }
+  }
+}

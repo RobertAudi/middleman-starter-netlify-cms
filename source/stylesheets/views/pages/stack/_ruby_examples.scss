@@ -1,0 +1,38 @@
+.ruby_examples {
+  margin-top: 33rem;
+  margin-bottom: 3rem;
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 0;
+  }
+
+  .container {
+    height: 100%;
+  }
+
+  p {
+    font-style: italic;
+    font-weight: $bold;
+    margin-bottom: 2rem;
+  }
+
+  &__logos {
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+    gap: 2rem 1rem;
+
+    @include media-breakpoint-up(md) {
+      grid-template-columns: repeat(4, 1fr);
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    img {
+      width: 8rem;
+    }
+  }
+}

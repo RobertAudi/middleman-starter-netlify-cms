@@ -6,68 +6,246 @@ backend:
 media_folder: source/images/uploads
 public_folder: /images/uploads
 
-# publish_mode: editorial_workflow #optional, enables publishing workflow
+locale: "fr"
 
 collections:
-  - name: pages
-    label: Pages
+  - label: "Pages"
+    name: pages
     files:
       - file: "data/pages/home.yml"
         label: Homepage
         name: home
         fields:
-          - label: Header
+          - label: "Header"
             name: header
             widget: object
             fields:
-              - {label: "Catchphrase", name: catchphrase, widget: string}
+              - label: "Slogan"
+                name: catchphrase
+                widget: markdown
+                minimal: true
+              - label: "Bouton"
+                name: make_an_appointment_button
+                widget: string
 
-          - label: Activity
+          - label: "Activity"
             name: activity
             widget: object
             fields:
-              - {label: "Catchphrase", name: catchphrase, widget: string}
-              - {label: "Institutions", name: institutions, widget: string}
+              - label: "Slogan"
+                name: catchphrase
+                widget: markdown
+                minimal: true
+              - label: "Institutions"
+                name: institutions
+                widget: markdown
+                minimal: true
 
-          - label: Description
+          - label: "Description"
             name: description
             widget: object
             fields:
-              - {label: "Catchphrase", name: catchphrase, widget: string}
-              - {label: "Description", name: description_text, widget: string}
+              - label: "Slogan"
+                name: catchphrase
+                widget: markdown
+                minimal: true
+              - label: "Description"
+                name: description_text
+                widget: markdown
+                minimal: true
+              - label: "Bouton"
+                name: make_an_appointment_button
+                widget: string
 
-          - label: Footer
+          - label: "Spécialités"
+            name: specialties
+            widget: object
+            fields:
+              - label: "Titre"
+                name: title
+                widget: string
+              - label: "Fonds d'investissement"
+                name: investment_funds
+                widget: object
+                fields:
+                  - label: "Titre"
+                    name: title
+                    widget: string
+                  - label: "Description"
+                    name: description
+                    widget: markdown
+                    minimal: true
+
+              - name: crowdfunding_platforms
+                label: "Plateformes de crowdfunding"
+                widget: object
+                fields:
+                  - label: "Titre"
+                    name: title
+                    widget: string
+                  - label: "Description"
+                    name: description
+                    widget: markdown
+                    minimal: true
+
+          - label: "Nos Clients"
+            name: client_base
+            widget: object
+            fields:
+              - label: "Bouton"
+                name: button_text
+                widget: string
+              - label: "Clients"
+                name: clients
+                widget: list
+                collapsed: true
+                fields:
+                  - label: "Nom"
+                    name: client_name
+                    widget: string
+                  - label: "Logo"
+                    name: logo
+                    widget: image
+
+          - label: "Témoignages"
+            name: testimonials
+            widget: object
+            fields:
+              - label: "Happpy button"
+                name: happy_button_text
+                widget: string
+              - label: "Clients"
+                name: client_testimonials
+                widget: list
+                fields:
+                  - label: "Témoignage"
+                    name: client_testimonial
+                    widget: markdown
+                    minimal: true
+                  - label: "Prénom du client"
+                    name: client_first_name
+                    widget: string
+                  - label: "Nom du client"
+                    name: client_last_name
+                    widget: string
+                  - label: "Companie du client"
+                    name: client_company
+                    required: false
+                    widget: object
+                    fields:
+                      - label: "Nom"
+                        name: company_name
+                      - label: "Logo"
+                        name: company_logo
+                        required: false
+                  - label: "Position"
+                    name: client_job
+                    widget: string
+                    required: false
+
+          - label: "A propos"
+            name: about_us
+            widget: object
+            fields:
+              - label: "Pas nous"
+                name: not_us
+                widget: object
+                fields:
+                  - label: "Titre"
+                    name: title
+                    widget: string
+                    required: false
+                  - label: "Description"
+                    name: description
+                    widget: markdown
+                    minimal: true
+
+              - label: "Vraiment nous"
+                name: really_us
+                widget: object
+                fields:
+                  - label: "Titre"
+                    name: title
+                    widget: string
+                    required: false
+                  - label: "Description"
+                    name: description
+                    widget: markdown
+                    minimal: true
+
+          - label: "Équipe"
+            name: team
+            widget: object
+            fields:
+              - label: "Membres"
+                name: team_members
+                collapsed: true
+                widget: list
+                summary: "{{first_name}} {{last_name}}"
+                fields:
+                  - label: "Prénom"
+                    name: first_name
+                    widget: string
+                  - label: "Nom"
+                    name: last_name
+                    widget: string
+                  - label: "Position"
+                    name: job
+                    widget: string
+                  - label: "Photo"
+                    name: photo
+                    widget: image
+
+              - label: "Konami"
+                name: konami_members
+                widget: list
+                fields:
+                  - label: "Prénom"
+                    name: first_name
+                    widget: string
+                    required: false
+                  - label: "Nom"
+                    name: last_name
+                    widget: string
+                    required: false
+                  - label: "Photo"
+                    name: photo
+                    widget: image
+
+              - label: "Bouton"
+                name: join_the_team_button
+                widget: string
+
+          - label: "Footer"
             name: footer
             widget: object
             fields:
-              - {label: "Social networks", name: social_networks, widget: string}
+              - label: "Réreaux sociaux"
+                name: social_networks
+                widget: string
 
-          - label: Buttons
-            name: buttons
-            widget: object
-            fields:
-              - {label: "Make an appointment", name: make_an_appointment, widget: string}
-              - {label: "Become happy", name: become_happy, widget: string}
-              - {label: "Join the team", name: join_the_team, widget: string}
-
-  - name: settings
-    label: Settings
+  - label: "Paramètres"
+    name: settings
     editor:
       preview: false
     files:
       - file: data/settings/navigation.yml
-        label: Navigation
+        label: "Navigation"
         name: navigation
         fields:
           - label: Navigation
             name: nav_items
             widget: list
             fields:
-              - {label: Label, name: label, widget: string}
-              - {label: Path, name: path, widget: string}
+              - label: Label
+                name: label
+                widget: string
+              - label: Path
+                name: path
+                widget: string
 
       - file: data/settings/seo.yml
-        label: SEO
+        label: "SEO"
         name: seo
         fields:
           - label: "Title"
@@ -86,18 +264,18 @@ collections:
             default: "website"
 
       - file: data/settings/contact.yml
-        label: Contact
+        label: "Contact"
         name: contact
         fields:
-          - label: Address Line 1
+          - label: "Adresse"
             name: address_line1
             widget: string
-          - label: Address Line 2
+          - label: "Complément d'adresse"
             name: address_line2
             widget: string
-          - label: Email
+          - label: "Email"
             name: email
             widget: string
-          - label: Phone number
+          - label: "Numéro de téléphone"
             name: phone_number
             widget: string

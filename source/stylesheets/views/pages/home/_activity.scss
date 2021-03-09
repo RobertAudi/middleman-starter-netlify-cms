@@ -24,7 +24,7 @@
 
   &__text {
     width: 19rem;
-
+    
     @include media-breakpoint-up(sm) {
       width: 22rem;
       padding-top: 1rem;

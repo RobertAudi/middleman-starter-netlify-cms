@@ -1,0 +1,134 @@
+.testimonies {
+  min-height: 35rem;
+  margin-bottom: 5rem;
+
+  .card {
+    min-height: 27rem;
+    margin: 0.6rem;
+
+    @include media-breakpoint-up(sm) {
+      width: 28rem;
+    }
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: $card-border-radius $card-border-radius 0 0;
+    min-height: 17rem;
+
+    p {
+      padding: 1rem 2rem;
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    min-height: 10rem;
+  }
+
+  &__picture {
+    height: 3rem;
+    width: 3rem;
+    overflow: hidden;
+    border-radius: 50%;
+
+    img {
+      width: 3rem;
+      object-fit: cover;
+    }
+  }
+
+  &__name {
+    flex: 0.75;
+
+    p:nth-child(3) {
+      margin-top: 0.2rem;
+      font-style: italic;
+      font-size: 90%;
+    }
+  }
+
+  &__profile {
+    flex: 0.6;
+    display: flex;
+    justify-content: flex-start !important;
+    align-items: center;
+  }
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 7rem;
+    flex: 0.4;
+    padding: 1rem;
+    border-left: 1px solid $grey;
+  }
+
+  .carousel-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    @include media-breakpoint-up(lg) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    & > * {
+      width: 90%;
+      display: flex;
+      justify-content: center;
+
+      @include media-breakpoint-up(lg) {
+        display: unset;
+        width: 100%;
+      }
+    }
+
+    div:nth-child(odd) {
+      @include media-breakpoint-up(lg) {
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+
+    div:nth-child(1),
+    div:nth-child(4) {
+      .testimonies__text {
+        background-image: url("../images/testimony_bg1.png");
+      }
+
+      .testimonies__info {
+        .testimonies__picture {
+          border: 2px solid $secondary;
+        }
+      }
+    }
+
+    div:nth-child(2),
+    div:nth-child(3) {
+      .testimonies__text {
+        background-image: url("../images/testimony_bg2.png");
+      }
+
+      .testimonies__info {
+        .testimonies__picture {
+          border: 2px solid $tertiary;
+        }
+      }
+    }
+
+    span {
+      font-family: $secondary-font;
+    }
+  }
+}

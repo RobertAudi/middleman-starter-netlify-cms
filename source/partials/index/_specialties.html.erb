@@ -1,0 +1,41 @@
+<section class="specialities">
+  <div class="container">
+    <h3 class="text-tertiary">
+      <%= data.pages.home.specialties.title %>
+    </h3>
+
+    <div class="specialities__cards">
+      <div class="card specialities__investment_funds">
+        <div class="specialities__header">
+          <%= partial 'partials/index/specialties/investment_funds_icon' %>
+
+          <h4 class="text-secondary">
+            <%= data.pages.home.specialties.investment_funds.title %>
+          </h4>
+        </div>
+
+        <div class="specialities__content">
+          <p>
+            <%= data.pages.home.specialties.investment_funds.description %>
+          </p>
+        </div>
+      </div>
+
+      <div class="card specialities__crowdfunding_platforms">
+        <div class="specialities__header">
+          <%= partial 'partials/index/specialties/crowdfunding_platforms_icon' %>
+
+          <h4 class="text-secondary">
+            <%= data.pages.home.specialties.crowdfunding_platforms.title %>
+          </h4>
+        </div>
+
+        <div class="specialities__content">
+          <p>
+            <%= data.pages.home.specialties.crowdfunding_platforms.description %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

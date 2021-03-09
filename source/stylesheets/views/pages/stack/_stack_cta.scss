@@ -1,0 +1,69 @@
+.stack_cta {
+  min-height: 8rem;
+
+  h1 {
+    margin-bottom: 5rem;
+    color: $primary;
+    font-weight: $semi-bold;
+    text-align: center;
+    width: 19rem;
+    font-size: 2.5rem;
+
+    @include media-breakpoint-up(md) {
+      width: 100%;
+      font-size: 2.8125rem;
+    }
+
+    span {
+      color: $white;
+      text-align: center;
+      position: relative;
+      word-break: break-all;
+      font-weight: $bold;
+
+      &::before {
+        @include highlight_text($tertiary);
+
+        @include media-breakpoint-up(md) {
+          left: -2%;
+          width: 104%;
+        }
+      }
+
+      &::after {
+        @include vertical_right_bar($tertiary);
+        left: 106%;
+
+        @include media-breakpoint-up(md) {
+          left: 104%;
+        }
+      }
+    }
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    @include media-breakpoint-up(md) {
+      flex-direction: row;
+    }
+
+    p {
+      margin: 3rem 0;
+      text-transform: uppercase;
+
+      @include media-breakpoint-up(md) {
+        margin: 0 5rem;
+      }
+    }
+  }
+}

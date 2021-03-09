@@ -1,0 +1,144 @@
+.clients_header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  background-image: url("../images/clients_banner.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  height: 34rem;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  .icons_container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: relative;
+    top: 4rem;
+    width: 100%;
+    @include logos-container-widths();
+    height: 32rem;
+    animation: horizontalScroll 60s linear infinite alternate;
+    margin: 0 auto;
+    left: 0;
+    @include media-breakpoint-up(sm) {
+      left: 3rem;
+    }
+    @include media-breakpoint-up(md) {
+      left: 5rem;
+    }
+
+    $sizes: ("one": 70, "two": 90, "three": 110, "four": 120, "five": 152);
+
+    @each $type, $size in $sizes {
+      @for $i from 1 through 100 {
+        $offsetX: random(20);
+        $offsetY: random(20);
+
+        div:nth-child(#{$i}).logo-#{$type} {
+          @if $i % 2 == 0 {
+            animation: fadeIn #{random(3)}s ease-in, evenFloat #{random(20) + 20}s infinite;
+            top: #{$offsetX}px;
+            left: -#{$offsetY}px;
+          } @else {
+            animation: fadeIn #{random(3)}s ease-in, oddFloat #{random(20) + 30}s infinite;
+            top: -#{$offsetX}px;
+            left: #{$offsetY}px;
+          }
+          position: relative;
+          z-index: $size;
+          margin: 1.8rem;
+
+          height: #{$size}px;
+          width: #{$size}px;
+          border-radius: 50%;
+          box-shadow: $card-box-shadow;
+
+          img {
+            width: 100%;
+            border-radius: 50%;
+          }
+
+          span {
+            opacity: 0;
+            position: absolute;
+            left: 0;
+            bottom: -35%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            height: 35%;
+            min-width: 100%;
+            border-radius: $btn-border-radius;
+            box-shadow: $card-box-shadow;
+
+            font-size: #{$size / 150}rem;
+            background-color: $white;
+            transition: all 0.3s ease-in;
+          }
+
+          &:hover span {
+            opacity: 0.9;
+            bottom: -40%;
+            transition: all 0.3s ease-in;
+          }
+
+          &:hover {
+            z-index: $size * 2;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes horizontalScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes evenFloat {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-#{random(30)}px, #{random(30)}px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes oddFloat {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(#{random(30)}px, -#{random(30)}px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

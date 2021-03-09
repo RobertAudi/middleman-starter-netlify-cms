@@ -1,0 +1,246 @@
+.react_pros {
+  min-height: 27rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h2 {
+    color: $primary;
+  }
+
+  svg {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .container {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    @include media-breakpoint-up(md) {
+      flex-direction: row;
+    }
+
+    p {
+      @include media-breakpoint-up(md) {
+        width: 80%;
+      }
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+
+      margin-bottom: 3rem;
+
+      @include media-breakpoint-up(md) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  #readableIcon {
+    .st0 {
+      fill: $secondary;
+      stroke: $primary;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10;
+    }
+    .st1 {
+      fill: $white;
+      stroke: $primary;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-miterlimit: 10;
+    }
+    .st2 {
+      fill: none;
+      stroke: $primary;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10;
+    }
+    .st3 {
+      fill: $white;
+    }
+    .st4 {
+      fill: $tertiary;
+    }
+  }
+
+  #reliableIcon {
+    .st0 {
+      fill: $secondary;
+    }
+    .st1 {
+      fill: $primary;
+    }
+    .st2 {
+      fill: $tertiary;
+    }
+    .st3 {
+      fill: $white;
+    }
+  }
+
+  #popular {
+    .st0 {
+      fill: $secondary;
+    }
+    .st1 {
+      fill: $primary;
+    }
+    .st2 {
+      fill: $tertiary;
+    }
+
+    // animation variables
+    $animation-timing: 5s;
+    $timing-function: ease;
+    $iteration-count: infinite;
+
+    .first,
+    .second,
+    .third,
+    .fourth {
+      opacity: 0;
+      transform-origin: center center;
+    }
+    .first {
+      animation: firstLocalisation $animation-timing $timing-function $iteration-count;
+    }
+    .second {
+      animation: secondLocalisation $animation-timing $timing-function $iteration-count;
+    }
+    .third {
+      animation: thirdLocalisation $animation-timing $timing-function $iteration-count;
+    }
+    .fourth {
+      animation: fourthLocalisation $animation-timing $timing-function $iteration-count;
+    }
+  }
+
+  #mobileApp {
+    $animation-timing: 5s;
+    $timing-function: ease;
+    $iteration-count: infinite;
+    .st0 {
+      fill: $primary;
+    }
+    .st1 {
+      fill: $secondary;
+    }
+    .st2 {
+      fill: $tertiary;
+    }
+    .st3 {
+      opacity:0.5;
+      fill: $tertiary;
+    }
+
+    .medium, .large, .xlarge, .large-block {
+      opacity: 0;
+    }
+
+    .medium {
+      animation: mediumSize $animation-timing $timing-function $iteration-count;
+    }
+    .large {
+      animation: largeSize $animation-timing $timing-function $iteration-count;
+    }
+    .xlarge {
+      animation: xlargeSize $animation-timing $timing-function $iteration-count;
+    }
+    .large-block {
+      animation: largeBlock $animation-timing $timing-function $iteration-count;
+    }
+  }
+
+  // popular animation
+  @keyframes firstLocalisation {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    10%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  @keyframes secondLocalisation {
+    0%, 20% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    30%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  @keyframes thirdLocalisation {
+    0%, 40% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    50%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  @keyframes fourthLocalisation {
+    0%, 60% {
+      opacity: 0;
+      transform: scale(0);
+    }
+    70%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes mediumSize {
+    0%, 50% {
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+  }
+  @keyframes largeSize {
+    0%, 10%, 60% {
+      opacity: 0;
+    }
+    20% {
+      opacity: 1;
+    }
+  }
+  @keyframes xlargeSize {
+    0%, 20%, 60% {
+      opacity: 0;
+    }
+    30%, 50% {
+      opacity: 1;
+    }
+  }
+  @keyframes largeBlock {
+    0%, 30%, 60% {
+      opacity: 0;
+    }
+    40%, 50% {
+      opacity: 1;
+    }
+  }
+}

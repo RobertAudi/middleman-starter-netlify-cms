@@ -1,0 +1,16 @@
+.happy_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  margin-bottom: 4rem;
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 0;
+  }
+
+  & > .btn-secondary::before {
+    height: 120%;
+  }
+}

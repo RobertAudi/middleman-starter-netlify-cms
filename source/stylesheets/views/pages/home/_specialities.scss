@@ -1,0 +1,124 @@
+.specialities {
+  display: flex;
+  justify-content: center;
+
+  min-height: 30rem;
+  position: relative;
+
+  .container {
+    margin-top: 9rem;
+  }
+
+  &::before {
+    content: "";
+    z-index: -1;
+    background-image: url("../images/stripe_mobile_bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: -10rem;
+
+    @include media-breakpoint-up(lg) {
+      background-image: url("../images/stripe_bg.png");
+      background-size: contain !important;
+      top: -5rem;
+    }
+
+    @include media-breakpoint-up(xl) {
+      background-size: cover !important;
+    }
+  }
+
+  h3 {
+    text-align: center;
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 2rem;
+
+    @include media-breakpoint-up(lg) {
+      flex-direction: row;
+      margin-top: 5rem;
+    }
+
+    & > .card {
+      display: flex;
+      justify-content: center;
+
+      width: 100%;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+
+      @include media-breakpoint-up(lg) {
+        width: 49%;
+        height: 17rem;
+      }
+
+      h4 {
+        width: 15rem;
+        text-align: center;
+
+        @include media-breakpoint-up(lg) {
+          margin-left: 1rem;
+          text-align: start;
+        }
+      }
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+
+    @include media-breakpoint-up(lg) {
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+
+    #crowdfundingPlatformsIcon,
+    #investmentFundsIcon {
+      width: 6rem;
+
+      @include media-breakpoint-up(lg) {
+        width: 4rem;
+      }
+    }
+
+    #investmentFundsIcon {
+      .st0 {
+        fill: $secondary;
+      }
+      .st1 {
+        fill: $primary;
+        transform-origin: center;
+        transform-box: fill-box;
+        animation: rotateWheel 5s infinite 1s;
+      }
+      .st2 {
+        fill: $white;
+      }
+    }
+  }
+
+  &__content {
+    height: 50%;
+  }
+}
+
+@keyframes rotateWheel {
+  0%, 60% {
+    transform: rotate(0);
+  }
+  75%, 100% {
+    transform: rotate(780deg);
+  }
+}

@@ -1,0 +1,59 @@
+.clients {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10rem;
+  position: relative;
+
+  &:hover &__logos {
+    @include media-breakpoint-up(lg) {
+      filter: blur(4px);
+      transform: scale(.95);
+      transition: filter, transform 0.4s ease;
+  
+      & > *:not(:last-child) {
+        margin-right: 1.5rem;
+        transition: margin-right 0.4s ease;
+      }
+    }
+  }
+
+  .btn {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    .btn {
+      @include media-breakpoint-up(lg) {
+        opacity: 1;
+        transition: opacity 0.4s ease;
+      }
+    }
+  }
+
+  &__logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    transition: filter, transform 0.4s ease;
+
+    & > *:not(:last-child) {
+      transition: margin-right 0.4s ease;
+    }
+
+    img {
+      height: 2rem;
+    }
+  }
+}

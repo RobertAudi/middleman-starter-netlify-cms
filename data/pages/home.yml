@@ -1,18 +1,79 @@
+buttons:
+  make_an_appointment: Prendre rendez-vous
+  become_happy: Devenir un client heureux
+  join_the_team: Rejoindre l'équipe
 header:
   catchphrase: développe les meilleures plateformes fintech
+  make_an_appointment_button: Prendre rendez-vous
 activity:
   institutions: Fonds d'investissement, assurance, asset managment, banques, CGP,
     courtiers, crowdfunding, paiement, ...
-  catchphrase: nous digitalisons toute la finance
+  catchphrase: |-
+    <h2 class="text-primary">
+      nous digitalisons<br>
+      <span class="text-white">toute la finance</span>
+    </h2>
 description:
   catchphrase: Avec des plateformes sur mesure
   description_text: Chaque plateforme est unique, développée en méthode scrum.
     Bien sûr, nous possédons nos bibliothèques de code réutilisables pour éviter
     de réinventer la poudre sur les sujets récurrents (back office, signature
     électronique, etc.).
+  make_an_appointment_button: Prendre rendez-vous
+specialties:
+  title: Parmi nos spécialités
+  investment_funds:
+    title: Digitaliser les fonds d'investissement
+    description: Test d'adéquation, vérification des KYC, génération des bulletins
+      et documents, signature électronique, coffre fort, reportings, échanges
+      avec les LP, suivi du dealflow. Tout y passe !
+  crowdfunding_platforms:
+    title: Les plateformes de crowdfunding
+    description: "Nous avons développé les plateformes de leaders du marché :
+      Credit.fr, LITA.co, Fundimmo, Enerfip, etc. En prêt, investissement ou
+      don, nous faisons exploser les compteurs !"
+client_base:
+  button_text: Découvrez nos clients
+  clients:
+    - logo: /images/uploads/la-nef-8b990526d7042a540e0420473b9154ea.png
+      client_name: La Nef
+    - logo: /images/uploads/mazars-b86e0ba6824c8d084bc944599e073b25.png
+      client_name: Mazars
+    - logo: /images/uploads/credit-fr-ce05b58996a2f78766a468f694315913.png
+      client_name: credit.fr
+    - logo: /images/uploads/société-générale-6a5b1f347dc9ee0dbf65683607359df7.png
+      client_name: Société Générale
+    - logo: /images/uploads/phalsbourg-52fd2646137d7a6ea67d4a1b0b738c0d.png
+      client_name: Compagnie de Phalsbourg
+    - logo: /images/uploads/credit-mutuel-arkea-3aa9f895e1313557b1dab3d4482461d1.png
+      client_name: Crédit Mutuel Arkea
+    - logo: /images/uploads/fundimmo-fdc744539abcdaa318c9c7fd89eb7bdc.png
+      client_name: Fundimmo
+testimonials:
+  happy_button_text: Devenir un client heureux
+  client_testimonials:
+    - client_testimonial: En seulement 12 semaines CapSens nous a développé une
+        plateforme robuste, fiable et parfaitement sécurisée.
+      client_first_name: Laurent
+      client_last_name: de Bernède
+      client_company:
+        company_name: Credit.fr
+        company_logo: Credit
+      client_job: Fondateur
+about_us:
+  not_us:
+    title: Qui sommes-nous ?
+    description: |-
+      Des fervents de la Méthode à Gilles\
+      pour qui les KPI sont leurs amis
+  really_us:
+    description: |
+      Des humains qui travaillent<br>
+      <span class="text-tertiary">comme des machines</span><br>
+      et s'amusent<br>
+      <span class="text-white">comme des enfants</span>
+    title: ""
+team:
+  join_the_team_button: Rejoindre l'équipe
 footer:
   social_networks: "Suivez-nous sur les réseaux :"
-buttons:
-  make_an_appointment: Prendre rendez-vous
-  become_happy: Devenir un client heureux
-  join_the_team: Rejoindre l'équipe

@@ -29,7 +29,8 @@ const HomePreview = ({ entry, widgetFor }) => {
                   className="st0"
                 ></path>
               </svg>
-              {data.header.catchphrase}
+
+              <span dangerouslySetInnerHTML={{__html: data.header.catchphrase}} />
             </h1>
           </div>
 
@@ -65,9 +66,8 @@ const HomePreview = ({ entry, widgetFor }) => {
             <p>
               {data.activity.institutions}
             </p>
-            <h2 class="text-primary">
-              {data.activity.catchphrase}
-            </h2>
+
+            <h2 class="text-primary" dangerouslySetInnerHTML={{__html: data.activity.catchphrase}} />
           </div>
         </div>
       </section>
@@ -106,9 +106,7 @@ const HomePreview = ({ entry, widgetFor }) => {
             </div>
 
             <div className="mt-lg-5">
-              <h2 className="text-secondary">
-                {data.description.catchphrase}
-              </h2>
+              <h2 class="text-secondary" dangerouslySetInnerHTML={{__html: data.description.catchphrase}} />
 
               <p>
                 {data.description.description_text}

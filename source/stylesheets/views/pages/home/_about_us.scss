@@ -1,0 +1,59 @@
+.about_us {
+  display: flex;
+  justify-content: center;
+  min-height: 17.5rem;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+
+    @include media-breakpoint-up(md) {
+      margin-top: 3rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      flex-direction: row;
+      margin-top: 5rem;
+    }
+  }
+
+  &__anti_description {
+    flex: 0.5;
+    margin-bottom: 2rem;
+
+    h1 {
+      font-weight: $semi-bold;
+    }
+
+    p {
+      font-size: 120%;
+      text-decoration: line-through;
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    flex: 0.4;
+
+    h2 {
+      span:nth-child(5) {
+        position: relative;
+        line-height: 1.4;
+        font-weight: $bold;
+        left: 2%;
+        font-size: 1.8rem;
+
+        &::before {
+          @include highlight_text($secondary);
+        }
+
+        &::after {
+          @include vertical_right_bar($secondary);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<section class="clients my-2 container">
+  <a href="#" class="d-flex align-items-center justify-content-center text-decoration-none h-100 w-100">
+    <span class="btn btn-primary">
+      <%= data.pages.home.client_base.button_text %>
+    </span>
+
+    <div class="clients__logos d-flex row justify-content-center justify-content-lg-between mx-auto w-100 px-2 px-lg-0">
+      <% data.pages.home.client_base.clients.each do |client| %>
+        <%= image_tag(client.logo, class: 'mx-2 mx-lg-0 la_nef') %>
+      <% end %>
+    </div>
+  </a>
+</section>

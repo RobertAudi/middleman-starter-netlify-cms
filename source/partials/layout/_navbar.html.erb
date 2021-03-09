@@ -1,10 +1,10 @@
-<nav class="px-0 navbar--home">
+<nav class="px-0 navbar--primary">
   <div class="container-md">
     <%= link_to("/") { partial 'partials/layout/icons/capsens_logo_primary' } %>
 
     <ul class="navbar__list">
       <% data.settings.navigation.nav_items.each do |nav_item| %>
-        <li>
+        <li class="nav-item">
           <%= nav_link nav_item.label, nav_item.path, class: "nav-link p-2 px-lg-3" %>
         </li>
       <% end %>

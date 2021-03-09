@@ -1,0 +1,195 @@
+.layout_card_left {
+  min-height: 40rem;
+  padding-top: 4rem;
+
+  .container {
+    height: 100%;
+  }
+
+  &__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    margin-bottom: 3rem;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 60%;
+
+    @include media-breakpoint-up(lg) {
+      flex-direction: row;
+    }
+  }
+
+  &__card {
+    flex: 0.5;
+    box-shadow: $card-box-shadow;
+    border-radius: $card-border-radius;
+    background-color: $secondary;
+    position: relative;
+
+    &> div {
+      &:first-child {
+        height: 30%;
+        max-height: 15rem;
+
+        img {
+          height: 100%;
+          max-height: 15rem;
+        }
+
+        .card_stripe {
+          position: absolute;
+          width: 100%;
+          height: 8rem;
+          left: 0;
+          bottom: -4rem;
+
+          @include media-breakpoint-up(md) {
+            height: 10rem;
+          }
+        }
+      }
+
+      &:nth-child(2) {
+        height: 70%;
+        padding: 2rem;
+
+        img {
+          width: 10rem;
+        }
+
+        p {
+          font-style: italic;
+        }
+      }
+    }
+
+    .project_picture {
+      width: 100%;
+      object-fit: cover;
+      border-radius: $card-border-radius $card-border-radius 0 0;
+    }
+  }
+
+  &__text {
+    margin-left: 0;
+    margin-top: 2rem;
+    flex: 0.5;
+
+    @include media-breakpoint-up(lg) {
+      margin-left: 2rem;
+      margin-top: 0;
+    }
+
+    div:first-child {
+      height: 90%;
+
+      p {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+      }
+    }
+
+    div:nth-child(2) {
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+
+      @include media-breakpoint-up(lg) {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__clients {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+    justify-items: center;
+
+    margin-top: 2rem;
+
+    @include media-breakpoint-up(sm) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @include media-breakpoint-up(lg) {
+      height: 10rem;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+.invest-icon {
+  height: 6rem;
+  width: 6rem;
+  position: relative;
+}
+
+.primary-part, 
+.tertiary-part {
+  height: 3rem;
+  width: 3rem;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.tertiary-part {
+  clip-path: polygon(66% 62%, 100% 7%, 100% 12%, 100% 100%, 0 100%, 21% 51%);
+  background-color: $tertiary;
+  mix-blend-mode: overlay;
+  animation: tertiaryPartAnimation 5s ease infinite;
+  // mix-blend-mode: overlay doesn't work well on firefox
+  @-moz-document url-prefix() {
+    mix-blend-mode: multiply;
+  }
+}
+
+.primary-part {
+  clip-path: polygon(70% 19%, 100% 36%, 100% 39%, 100% 100%, 0 100%, 39% 82%);
+  background-color: $primary;
+  animation: primaryPartAnimation 5s ease infinite;
+  // mix-blend-mode: overlay doesn't work well on firefox
+  @-moz-document url-prefix() {
+    mix-blend-mode: hard-light;
+  }
+}
+
+@keyframes tertiaryPartAnimation {
+  0% {
+    clip-path: polygon(66% 62%, 100% 7%, 100% 12%, 100% 100%, 0 100%, 21% 51%);
+  }
+  10%, 25% {
+    clip-path: polygon(53% 61%, 86% 75%, 100% 30%, 100% 100%, 0 100%, 3% 67%);
+  }
+  25%, 40% {
+    clip-path: polygon(56% 48%, 86% 67%, 100% 30%, 100% 100%, 0 100%, 34% 85%);
+  }
+  40% {
+    clip-path: polygon(66% 62%, 100% 7%, 100% 12%, 100% 100%, 0 100%, 21% 51%);
+  }
+}
+
+@keyframes primaryPartAnimation {
+  0% {
+  clip-path: polygon(70% 19%, 100% 36%, 100% 39%, 100% 100%, 0 100%, 39% 82%);  
+  }
+  10%, 25% {
+    clip-path: polygon(55% 55%, 65% 24%, 100% 43%, 100% 100%, 0 100%, 25% 59%);  
+  }
+  25%, 40% {
+    clip-path: polygon(58% 61%, 84% 43%, 100% 39%, 100% 99%, 0 100%, 24% 66%);
+  }
+  40% {
+  clip-path: polygon(70% 19%, 100% 36%, 100% 39%, 100% 100%, 0 100%, 39% 82%);  
+  }
+}

@@ -1,0 +1,350 @@
+.react_description {
+  min-height: 20rem;
+  position: relative;
+  margin-bottom: 2rem;
+
+  @include media-breakpoint-up(md) {
+    margin-bottom: 0;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -9rem;
+    left: 0;
+    height: 113rem;
+    width: 100%;
+    background-image: url("../images/stripe_mobile_bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+
+    @include media-breakpoint-up(sm) {
+      height: 110rem;
+    }
+
+    @include media-breakpoint-up(md) {
+      height: 60rem;
+    }
+
+    @include media-breakpoint-up(lg) {
+      height: 55rem;
+    }
+  }
+
+  .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include media-breakpoint-up(md) {
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: flex-start;
+      text-align: start;
+    }
+  }
+
+  &__screen {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    margin-bottom: 2rem;
+
+    @include media-breakpoint-up(md) {
+      margin-bottom: 0;
+    }
+
+    .fb-wall {
+      font-family: $fb-fonts;
+      max-width: 29rem;
+      min-height: 30rem;
+      border: 3px solid $grey;
+      border-radius: $card-border-radius;
+      background-color: $white;
+      position: relative;
+      font-size: 0.9rem;
+      letter-spacing: 0;
+
+      .h1 {
+        font-family: $fb-fonts;
+        font-size: 1.1rem;
+        font-weight: $semi-bold;
+        color: $primary;
+      }
+
+      a {
+        cursor: pointer;
+        position: relative;
+        padding: 0.5rem 1.5rem;
+        font-weight: $semi-bold;
+        border-radius: 5px;
+        text-align: center;
+        flex: 1;
+
+        &:hover {
+          background-color: $fb-grey;
+        }
+      }
+
+      i {
+        position: absolute;
+        left: 10%;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 1rem;
+        width: 1rem;
+        background-size: cover;
+      }
+
+      .like-thumb {
+        background-image: url("../images/facebook_wall/thumb-bold.svg");
+      }
+
+      &__header {
+        display: flex;
+        padding: 1rem;
+      }
+
+      &__picture {
+        height: 2.5rem;
+        width: 2.5rem;
+        border-radius: 50%;
+        background-color: $primary;
+        margin-right: 0.5rem;
+        background-size: cover;
+        object-fit: cover;
+      }
+
+      .nicolas {
+        background-image: url("../images/facebook_wall/nicolas_mini.jpg");
+      }
+
+      .claudy {
+        background-image: url("../images/facebook_wall/claudy.jpg");
+      }
+
+      .jl {
+        background-image: url("../images/facebook_wall/jl-couchard.jpg");
+      }
+
+      .quentin {
+        background-image: url("../images/facebook_wall/quentin_mini.jpg");
+      }
+
+      &__owner {
+        p {
+          font-size: 0.8rem;
+        }
+      }
+
+      &__time {
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          background: center / contain no-repeat url("../images/facebook_wall/world.svg");
+          height: 1rem;
+          width: 1rem;  
+          margin: 0 .2rem;     
+        }
+      }
+
+      &__post {
+        padding: 0 1rem;
+        margin-bottom: 1rem;
+      }
+
+      &__actions {
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border-top: 1px solid $light-grey;
+        border-bottom: 1px solid $light-grey;
+        margin-bottom: 0.5rem;
+        padding: 0 1.5rem;
+      }
+
+      &__likes {
+        padding: 0 1rem 0 3.5rem;
+        margin-bottom: 0.5rem;
+        color: $primary;
+        font-size: 0.8rem;
+        position: relative;
+        font-weight: $bold;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 2px;
+          left: 1.1rem;
+          z-index: 1;
+          background-image: url("../images/facebook_wall/thumb-up.svg");
+          height: 1rem;
+          width: 1rem;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 2px;
+          left: 2.2rem;
+          background-image: url("../images/facebook_wall/heart.svg");
+          height: 1rem;
+          width: 1rem;
+        }
+      }
+
+      .liked {
+        color: $primary;
+        font-weight: $bold;
+
+        i.like-thumb {
+          background-image: url("../images/facebook_wall/thumb-bold-primary.svg");
+        }
+      }
+
+      &__message {
+        display: flex;
+        margin-bottom: 1rem;
+        word-break: break-word;
+
+        div:nth-child(2) {
+          max-width: 80%;
+          background-color: $fb-grey;
+          border-radius: $card-border-radius;
+          border: 1px solid $light-grey;
+          padding: 0.5rem;
+        }
+      }
+
+      &__messages {
+        padding: 0 1rem;
+      }
+
+      &__input {
+        border-bottom-left-radius: $card-border-radius;
+        border-bottom-right-radius: $card-border-radius;
+        height: 4rem;
+        width: 100%;
+        padding: 0 1rem;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: $fb-grey;
+        border-top: 1px solid $light-grey;
+
+        display: flex;
+        align-items: center;
+
+        input {
+          height: 70%;
+          flex: 1;
+          border-radius: $btn-border-radius;
+          padding-left: 1rem;
+          border: 1px solid $light-grey;
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+    }
+  }
+
+  &__icon {
+    @include media-breakpoint-up(md) {
+      margin-right: 1rem;
+    }
+
+    #reactIcon {
+      position: relative;
+      top: 0;
+      width: 5rem;
+      animation: reactRotation 5s ease infinite; 
+      transform-origin: center center;
+
+      @include media-breakpoint-up(md) {
+        top: -1rem;
+      }
+
+      .st0 {
+        fill: $tertiary;
+      }
+      .st1 {
+        fill: $white;
+      }
+      .st2 {
+        fill: $secondary;
+      }
+    }
+
+    @keyframes reactRotation {
+      0%, 50% {
+        transform: rotate(-360deg);
+      }
+    }
+  }
+
+  &__text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    div:first-child {
+      h2 {
+        color: $tertiary;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        width: 100%;
+        margin-bottom: 2rem;
+
+        @include media-breakpoint-up(lg) {
+          width: 70%;
+        }
+      }
+    }
+
+    div:last-child {
+      p {
+        font-weight: $bold;
+        font-style: italic;
+        margin-bottom: 2rem;
+
+        @include media-breakpoint-up(md) {
+          margin-bottom: 1rem;
+        }
+      }
+
+      div {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        align-items: center;
+        gap: 1.5rem;
+
+        @include media-breakpoint-up(md) {
+          width: 70%;
+          grid-template-columns: repeat(1, 1fr);
+        }
+
+        @include media-breakpoint-up(lg) {
+          width: 70%;
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        img {
+          width: 8rem;
+        }
+      }
+    }
+  }
+}
